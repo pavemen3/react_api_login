@@ -37,9 +37,9 @@ const Header: React.FC = () => {
   const handleSignOut = async (e: React.MouseEvent<HTMLButtonElement>) => {
     try {
       const res = await signOut()
-      // if (typeof res === "undefined") {
-      //   return;
-      // }
+      if (typeof res === "undefined") {
+        return;
+      }
 
       if (res.data.success === true) {
         // サインアウト時には各Cookieを削除
