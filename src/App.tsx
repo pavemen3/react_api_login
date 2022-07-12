@@ -90,7 +90,7 @@ const App = () => {
               path="/"
               element={
                 <Private>
-                  <Route path="/" element={<Home />} />
+                  <Home />
                 </Private>
               }
             />
