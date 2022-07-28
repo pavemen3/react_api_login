@@ -1,5 +1,5 @@
-import applyCaseMiddleware from "axios-case-converter"
-import axios from "axios"
+import applyCaseMiddleware from 'axios-case-converter'
+import axios from 'axios'
 
 // applyCaseMiddleware:
 // axiosで受け取ったレスポンスの値をスネークケース→キャメルケースに変換
@@ -10,8 +10,11 @@ const options = {
   ignoreHeaders: true
 }
 
-const client = applyCaseMiddleware(axios.create({
-  baseURL: "http://localhost:3000/api/v1"
-}), options)
+const client = applyCaseMiddleware(
+  axios.create({
+    baseURL: 'http://localhost:3000/api/v1'
+  }),
+  options
+)
 
 export default client
