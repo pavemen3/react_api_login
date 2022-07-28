@@ -65,9 +65,14 @@ const Header: React.FC = () => {
     if (!loading) {
       if (isSignedIn) {
         return (
-          <Button color="inherit" className={classes.linkBtn} onClick={handleSignOut}>
-            Sign out
-          </Button>
+          <>
+            <Button component={Link} to="/books" color="inherit" className={classes.linkBtn}>
+              Books
+            </Button>
+            <Button color="inherit" className={classes.linkBtn} onClick={handleSignOut}>
+              Sign out
+            </Button>
+          </>
         )
       } else {
         return (

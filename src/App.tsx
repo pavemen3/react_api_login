@@ -2,7 +2,8 @@ import React, { useState, useEffect, createContext } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 import CommonLayout from 'components/layouts/CommonLayout'
-import Home from 'components/pages/Home'
+// import Home from 'components/pages/Home'
+import Books from 'components/pages/Books'
 import SignUp from 'components/pages/SignUp'
 import SignIn from 'components/pages/SignIn'
 
@@ -85,7 +86,7 @@ const App = () => {
               path="/"
               element={
                 <Private>
-                  <Home />
+                  <Books />
                 </Private>
               }
             />
