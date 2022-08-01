@@ -39,7 +39,7 @@ const App = () => {
 
         console.log(res?.data.data)
       } else {
-        console.log('No current user')
+        console.log('No current user: ', res)
       }
     } catch (err) {
       console.log(err)
