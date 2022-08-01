@@ -80,6 +80,7 @@ const App = () => {
       >
         <CommonLayout>
           <Routes>
+            <Route path="/books" element={<Books />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />
             <Route

@@ -77,6 +77,9 @@ const Header: React.FC = () => {
       } else {
         return (
           <>
+            <Button component={Link} to="/books" color="inherit" className={classes.linkBtn}>
+              Books
+            </Button>
             <Button component={Link} to="/signin" color="inherit" className={classes.linkBtn}>
               Sign in
             </Button>
