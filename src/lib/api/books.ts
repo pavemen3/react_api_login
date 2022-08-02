@@ -1,4 +1,6 @@
 import client from 'lib/api/client'
+import { UpdateBookFormData } from 'interfaces/index'
+
 import Cookies from 'js-cookie'
 
 // 動作確認用
@@ -16,4 +18,14 @@ export const getBooks = () => {
       uid: Cookies.get('_uid')!
     }
   })
+}
+
+// id指定でBook情報を個別に取得
+export const getBook = (id: number | undefined) => {
+  return client.get(`/books/${id}`)
+}
+
+// Book情報を更新
+export const updateBook = (id: number | undefined | null, data: UpdateBookFormData) => {
+  return client.put(`/books/${id}`, data)
 }

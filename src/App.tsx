@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 import CommonLayout from 'components/layouts/CommonLayout'
-// import Home from 'components/pages/Home'
+import Home from 'components/pages/Home'
 import Books from 'components/pages/Books'
 import SignUp from 'components/pages/SignUp'
 import SignIn from 'components/pages/SignIn'
@@ -33,11 +33,14 @@ const App = () => {
     try {
       const res = await getCurrentUser()
 
-      if (res?.data.isLogin === true) {
+      if (res?.status === 200) {
         setIsSignedIn(true)
-        setCurrentUser(res?.data.data)
+        setCurrentUser(res?.data.currentUser)
 
-        console.log(res?.data.data)
+        console.log('res?.status: ', res?.status)
+        console.log('res?.data: ', res?.data)
+        console.log('res?.data.currentUser: ', res?.data.currentUser)
+        console.log('res?.data.isLogin: ', res?.data.isLogin)
       } else {
         console.log('No current user: ', res)
       }
@@ -80,6 +83,7 @@ const App = () => {
       >
         <CommonLayout>
           <Routes>
+            <Route path="/home" element={<Home />} />
             <Route path="/books" element={<Books />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />

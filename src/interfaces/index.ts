@@ -19,9 +19,33 @@ export interface User {
   provider: string
   email: string
   name: string
-  nickname?: string
-  image?: string
   allowPasswordChange: boolean
   created_at: Date
   updated_at: Date
+}
+
+// Books
+export interface Book {
+  id: number
+  userId: number
+  title: string
+  body: string
+  genre: string
+  image: {
+    url: string
+  }
+  createdAt?: Date
+  updatedAt?: Date
+}
+export interface UpdateBookData {
+  id: number | undefined | null
+  userId?: number
+  title?: string
+  body?: string
+  genre?: string
+  image?: string
+}
+
+export interface UpdateBookFormData extends FormData {
+  append(name: keyof UpdateBookData, value: String | Blob, fileName?: string): any
 }

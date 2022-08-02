@@ -66,6 +66,9 @@ const Header: React.FC = () => {
       if (isSignedIn) {
         return (
           <>
+            <Button component={Link} to="/home" color="inherit" className={classes.linkBtn}>
+              Home
+            </Button>
             <Button component={Link} to="/books" color="inherit" className={classes.linkBtn}>
               Books
             </Button>
@@ -77,6 +80,9 @@ const Header: React.FC = () => {
       } else {
         return (
           <>
+            <Button component={Link} to="/home" color="inherit" className={classes.linkBtn}>
+              Home
+            </Button>
             <Button component={Link} to="/books" color="inherit" className={classes.linkBtn}>
               Books
             </Button>
