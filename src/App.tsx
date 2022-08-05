@@ -22,7 +22,7 @@ export const AuthContext = createContext(
   }
 )
 
-const App = () => {
+const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true)
   const [isSignedIn, setIsSignedIn] = useState<boolean>(false)
   const [currentUser, setCurrentUser] = useState<User | undefined>()
@@ -33,13 +33,12 @@ const App = () => {
     try {
       const res = await getCurrentUser()
 
-      if (res?.status === 200) {
+      if (res?.data.isLogin === true) {
         setIsSignedIn(true)
-        setCurrentUser(res?.data.currentUser)
+        setCurrentUser(res?.data.data)
 
         console.log('res?.status: ', res?.status)
-        console.log('res?.data: ', res?.data)
-        console.log('res?.data.currentUser: ', res?.data.currentUser)
+        console.log('res?.data.data: ', res?.data.data)
         console.log('res?.data.isLogin: ', res?.data.isLogin)
       } else {
         console.log('No current user: ', res)
